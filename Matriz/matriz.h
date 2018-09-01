@@ -7,20 +7,19 @@ namespace TP2{//inicio
 class Matriz
 {
 private:
-    int quantidadeDeColunas;
-    int quantidadeDeLinhas;
+    int quantidadeDeColunas,quantidadeDeLinhas;
     int *ptMatriz;
 public:
-    Matriz(int qLinhas, int qColunas);
+    Matriz(int,int);
     ~Matriz(){if(ptMatriz) delete[] ptMatriz;}
-    int getQuantidadeDeLinhas()const{return quantidadeDeLinhas;}
-    int getQuantidadeDeColunas()const{return quantidadeDeColunas;}
+    int getQuantidadeDeLinhas(){return quantidadeDeLinhas;}
+    int getQuantidadeDeColunas(){return quantidadeDeColunas;}
 
-    void setElemento(int elemento, int linha, int coluna)const;
-    int getElemento(int linha, int coluna)const;
-    QString getMatriz()const;
-    Matriz* operator + (Matriz const * const mat)const;
-    Matriz* operator - (Matriz const * const mat)const;
+    void setElemento(int elemento, int linha, int coluna);
+    int getElemento(int linha, int coluna);
+    void getMatriz();
+    Matriz* operator + (Matriz*  mat);
+    Matriz* operator - (Matriz*  mat);
 };
 }//fim
 
