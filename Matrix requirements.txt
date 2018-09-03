@@ -1,0 +1,60 @@
+
+MATRIZES
+CONTEXTO
+No  mundo  computacional,  todas  as  imagens  geradas  e/ou  armazenadas  são  na  sua 
+concepção  um  conjunto  de  matrizes  (arquivos  .bmp  e  outros).  Uma  imagem  de  tamanho  800x600, 
+significa que esta possui 800 linhas por 600 colunas, isto define portanto o tamanho da matriz que a 
+representa. Toda  e  qualquer  modificação  a  ser  executada  em  uma  imagem  (aplicar  o  zoom,  retirar 
+uma cor, modificar contornos e outros) é na sua essência operações matriciais amplamente estudas 
+e apresentadas na matemática. 
+TRABALHO
+Desenvolver   um   sistema   para   o   tratamento   de   matrizes   que   possua   as   seguintes 
+funcionalidades:
+1.
+ Ler uma matriz do dispositivo de entrada (teclado), com tamanho definido pelo usuário;
+2.
+ Escrever uma matriz no dispositivo de saída (monitor);
+3.
+ Calcular a adição de duas matrizes;
+4.
+ Calcular a subtração de duas matrizes;
+5.
+ Calcular a multiplicação de duas matrizes;
+6.
+ Determinar se a matriz é triangular superior;
+7.
+ Determinar se a matriz é triangular inferior;
+8.
+ Determinar se a matriz é simétrica;
+9.
+ Determinar se a matriz é identidade;
+10.
+ Calcular a matriz transposta;
+11.
+ Calcular a potenciação de uma matriz;
+12.
+ Calcular a multiplicação de uma matriz por k;
+13.
+ Determinar se duas matrizes são iguais;
+14.
+ Determinar se duas matrizes são diferentes;
+15.
+ Determinar se a matriz é ortogonal;
+16.
+ Determinar se a matriz é de permutação;
+17.
+ Construir uma interface gráfica para o sistema.
+PROBLEMA
+Construir  um  modelo  computacional  que  abranja  todas  as  necessidades  apresentadas  nos 
+itens contexto e trabalho.
+MODELOS
+Utilizar a linguagem de modelagem unificada (UML) para formalizar a solução, construindo o 
+diagrama de classe.
+LINGUAGEM
+Implementar os diagramas utilizando a linguagem de programação OO . 
+ATIVIDADES
+Entregar o diagrama de classe e o programa na data a ser definida no laboratório.
+METODOLOGIA
+O trabalho deverá ser desenvolvido em grupos de 2
+ alunos – obs.: o professor poderá intervir 
+na formação dos grupos. A avaliação do trabalho será aplicada de forma individual e em grupo. 
