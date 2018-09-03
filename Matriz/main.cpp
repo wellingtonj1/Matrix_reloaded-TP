@@ -23,6 +23,11 @@ int main(int argc, char *argv[])
         puts("3- Para somar a matriz criada");
         puts("4- Para subtrair a matriz");
         puts("5- Para mostrar todas as matrizes");
+        puts("6- Para determinar se a matriz é triangular inferior;");
+        puts("7- Para determinar se a matriz é triangular superior; ");
+        puts("8- Para determinar se a matriz é identidade");
+        puts("9- ");
+        puts("10- ");
         puts("0- Para sair do pograna ");
         std::cin>>escolha;
 
@@ -77,6 +82,87 @@ int main(int argc, char *argv[])
             auxtest->getMatriz();
             puts("");
             break;
+
+        case 6:
+            int qualmat;
+            std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n";
+            do
+            {
+                std::cin>>qualmat;
+                if(qualmat==1)
+                {
+                    if(teste1->trianginf())
+                        std::cout<<"\nA matriz é triangular inferior\n";
+                    else
+                        std::cout<<"\nA matriz não é triangular inferior\n";
+                }
+                if(qualmat==2)
+                {
+                    if(teste2->trianginf())
+                        std::cout<<"\nA matriz é triangular inferior\n";
+                    else
+                        std::cout<<"\nA matriz não é triangular inferior\n";
+                }
+                if(qualmat!=1||qualmat!=2)
+                    std::cout<<"\nDigite um numero valido!\n";
+
+            }while(qualmat!=1&&qualmat!=2);
+
+           break;
+
+        case 7:
+            int qualmat2;
+            std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n";
+            do
+            {
+                std::cin>>qualmat2;
+                if(qualmat2==1)
+                {
+                    if(teste1->triangsup())
+                        std::cout<<"\nA matriz é triangular superior\n";
+                    else
+                        std::cout<<"\nA matriz não é triangular superior\n";
+                }
+                if(qualmat2==2)
+                {
+                    if(teste2->triangsup())
+                        std::cout<<"\nA matriz é triangular superior\n";
+                    else
+                        std::cout<<"\nA matriz não é triangular superior\n";
+                }
+                if(qualmat2!=1||qualmat2!=2)
+                    std::cout<<"\nDigite um numero valido!\n";
+
+            }while(qualmat2!=1&&qualmat2!=2);
+
+           break;
+        case 8:
+            int qualmat3;
+            std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n";
+            do
+            {
+                std::cin>>qualmat3;
+                if(qualmat3==1)
+                {
+                    if(teste1->identidade())
+                        std::cout<<"\nA matriz é identidade \n";
+                    else
+                        std::cout<<"\nA matriz não é identidade \n";
+                }
+                if(qualmat3==2)
+                {
+                    if(teste2->identidade())
+                        std::cout<<"\nA matriz é identidade \n";
+                    else
+                        std::cout<<"\nA matriz não é identidade \n";
+                }
+                if(qualmat3!=1||qualmat3!=2)
+                    std::cout<<"\nDigite um numero valido!\n";
+
+            }while(qualmat3!=1&&qualmat3!=2);
+
+           break;
+
         default:
             break;
         }
