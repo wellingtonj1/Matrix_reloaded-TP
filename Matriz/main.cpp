@@ -2,11 +2,10 @@
 #include <bits/stdc++.h>
 #include "matriz.h"
 
-int main(int argc, char *argv[])
+int main()
 {
-    QCoreApplication a(argc, argv);
     int tamacol,tamalinha;
-    int escolha;
+    int escolha,qualmat;
     puts("Digite a quantidade de linhas : ");
     std::cin>>tamalinha;
     puts("Digite a quantidade de colunas : ");
@@ -19,15 +18,20 @@ int main(int argc, char *argv[])
     do
     {
         puts("1- Para setar um valor na matriz");
-        puts("2- Para setar um valor para a segunda matriz criada");
+        puts("2- Para setar um valor para a segunda matriz " );
         puts("3- Para somar a matriz criada");
         puts("4- Para subtrair a matriz");
         puts("5- Para mostrar todas as matrizes");
-        puts("6- Para determinar se a matriz é triangular inferior;");
-        puts("7- Para determinar se a matriz é triangular superior; ");
+        puts("6- Para determinar se a matriz é triangular inferior");
+        puts("7- Para determinar se a matriz é triangular superior");
         puts("8- Para determinar se a matriz é identidade");
         puts("9- Para determinar a matriz transposta");
-        puts("10- ");
+        puts("10- Para determinar se a matriz é simetrica");
+        puts("11- Para determinar se as duas matrizes são iguais ou diferentes");
+        puts("12- Para determinar se a matriz é ortogonal");
+        puts("13- Para determinar se a matriz é de permutação");
+        puts("14- Para calcular a multiplicação de duas matrizes");
+        puts("15- Para calcular a potenciação de uma matriz");
         puts("0- Para sair do pograna ");
         std::cin>>escolha;
 
@@ -48,7 +52,6 @@ int main(int argc, char *argv[])
 
         case 2:
 
-            std::cout<<"\nDigite o valor da segunda matriz para realizar a soma \n";
             int colocaelaux,lineaux,colaux;
             puts("Digite o valor que você quer inserir\n");
             std::cin>>colocaelaux;
@@ -84,8 +87,8 @@ int main(int argc, char *argv[])
             break;
 
         case 6:
-            int qualmat;
-            std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n";
+
+            std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n\n";
             do
             {
                 std::cin>>qualmat;
@@ -99,11 +102,11 @@ int main(int argc, char *argv[])
                 if(qualmat==2)
                 {
                     if(teste2->trianginf())
-                        std::cout<<"\nA matriz é triangular inferior\n";
+                        std::cout<<"\nA matriz é triangular inferior\n\n";
                     else
-                        std::cout<<"\nA matriz não é triangular inferior\n";
+                        std::cout<<"\nA matriz não é triangular inferior\n\n";
                 }
-                if(qualmat!=1||qualmat!=2)
+                if(qualmat!=1&&qualmat!=2)
                     std::cout<<"\nDigite um numero valido!\n";
 
             }while(qualmat!=1&&qualmat!=2);
@@ -111,76 +114,139 @@ int main(int argc, char *argv[])
            break;
 
         case 7:
-            int qualmat2;
-            std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n";
+
+            std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n\n";
             do
             {
-                std::cin>>qualmat2;
-                if(qualmat2==1)
+                std::cin>>qualmat;
+                if(qualmat==1)
                 {
                     if(teste1->triangsup())
-                        std::cout<<"\nA matriz é triangular superior\n";
+                        std::cout<<"\nA matriz é triangular superior\n\n";
                     else
-                        std::cout<<"\nA matriz não é triangular superior\n";
+                        std::cout<<"\nA matriz não é triangular superior\n\n";
                 }
-                if(qualmat2==2)
+                if(qualmat==2)
                 {
                     if(teste2->triangsup())
-                        std::cout<<"\nA matriz é triangular superior\n";
+                        std::cout<<"\nA matriz é triangular superior\n\n";
                     else
-                        std::cout<<"\nA matriz não é triangular superior\n";
+                        std::cout<<"\nA matriz não é triangular superior\n\n";
                 }
-                if(qualmat2!=1||qualmat2!=2)
+                if(qualmat!=1&&qualmat!=2)
                     std::cout<<"\nDigite um numero valido!\n";
 
-            }while(qualmat2!=1&&qualmat2!=2);
+            }while(qualmat!=1&&qualmat!=2);
 
            break;
         case 8:
-            int qualmat3;
-            std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n";
+
+            std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n\n";
             do
             {
-                std::cin>>qualmat3;
-                if(qualmat3==1)
+                std::cin>>qualmat;
+                if(qualmat==1)
                 {
                     if(teste1->identidade())
-                        std::cout<<"\nA matriz é identidade \n";
+                        std::cout<<"\nA matriz é identidade \n\n";
                     else
-                        std::cout<<"\nA matriz não é identidade \n";
+                        std::cout<<"\nA matriz não é identidade \n\n";
                 }
-                if(qualmat3==2)
+                if(qualmat==2)
                 {
                     if(teste2->identidade())
-                        std::cout<<"\nA matriz é identidade \n";
+                        std::cout<<"\nA matriz é identidade \n\n";
                     else
-                        std::cout<<"\nA matriz não é identidade \n";
+                        std::cout<<"\nA matriz não é identidade \n\n";
                 }
-                if(qualmat3!=1||qualmat3!=2)
+                if(qualmat!=1&&qualmat!=2)
                     std::cout<<"\nDigite um numero valido!\n";
 
-            }while(qualmat3!=1&&qualmat3!=2);
+            }while(qualmat!=1&&qualmat!=2);
 
            break;
 
         case 9:
-           int qualmat4;
-           std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n";
+           std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n\n";
            do
            {
-               std::cin>>qualmat4;
-               if(qualmat4==1)
+               std::cin>>qualmat;
+               if(qualmat==1)
                {
                     auxtest->transposta(teste1);
+                    auxtest->getMatriz();
                }
-               if(qualmat4==2)
+               if(qualmat==2)
                {
                    auxtest->transposta(teste2);
+                   auxtest->getMatriz();
                }
-               if(qualmat4!=1||qualmat4!=2)
+               if(qualmat!=1&&qualmat!=2)
                    std::cout<<"\nDigite um numero valido!\n";
 
-           }while(qualmat4!=1&&qualmat4!=2);
+           }while(qualmat!=1&&qualmat!=2);
+            break;
+
+        case 10:
+
+            std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n\n";
+            do
+            {
+                std::cin>>qualmat;
+                if(qualmat==1)
+                {
+                     auxtest->transposta(teste1);
+                     if(teste1->simetrica(auxtest))
+                     {
+                         std::cout<<"\n A matriz é simétrica ! \n\n";
+                     }
+                     else
+                         std::cout<<"\n A matriz não é simétrica ! \n\n";
+                }
+                if(qualmat==2)
+                {
+                    auxtest->transposta(teste2);
+                    if(teste2->simetrica(auxtest))
+                    {
+                        std::cout<<"\n A matriz é simétrica ! \n\n";
+                    }
+                    else
+                        std::cout<<"\n A matriz não é simétrica ! \n\n";
+                }
+                if(qualmat!=1&&qualmat!=2)
+                    std::cout<<"\nDigite um numero valido!\n";
+
+            }while(qualmat!=1&&qualmat!=2);
+            break;
+
+        case 11:
+
+            if(teste1->iguais(teste2))
+            {
+                std::cout<<"\n A matrizes são iguais \n\n";
+            }
+            else
+            {
+                std::cout<<"\n A matrizes são diferentes \n\n";
+            }
+            break;
+
+        case 12:
+
+
+            break;
+
+        case 13:
+
+            break;
+
+        case 14:
+
+            break;
+
+        case 15:
+
+            break;
 
         default:
             break;
@@ -188,5 +254,4 @@ int main(int argc, char *argv[])
     }while(escolha!=0);
     return 0;
 
-    return a.exec();
 }

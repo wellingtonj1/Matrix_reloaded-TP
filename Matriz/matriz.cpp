@@ -158,15 +158,13 @@ bool Matriz::identidade()
     {
         for(int j=0;j<getQuantidadeDeColunas();j++,i++)
         {
-            if(triangsup()&&trianginf()&&getElemento(i,j)==0)
+            if(!triangsup()&&!trianginf()&&getElemento(i,j)==1)
             {
                 return true;
-            }
-
+            }      
         }
     }
     return false;
-
 }
 
 void Matriz::transposta(Matriz* x)
@@ -178,6 +176,53 @@ void Matriz::transposta(Matriz* x)
             setElemento(x->getElemento(j,i),i,j);
         }
     }
+}
+
+bool Matriz::simetrica(Matriz* x)
+{
+        int i,j;
+        for(i=0;i<getQuantidadeDeLinhas();i++)
+        {
+            for(j=0;j<getQuantidadeDeColunas() && getElemento(i,j)==x->getElemento(i,j);j++);
+        }
+
+        if(j==getQuantidadeDeColunas()&&i==getQuantidadeDeLinhas())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+}
+
+bool Matriz::iguais(Matriz* x)
+{
+    bool valor=true;
+    for(int i=0;i<quantidadeDeLinhas;i++)
+    {
+        for(int j=0;j<quantidadeDeColunas;j++)
+        {
+            if(valor==true)
+            {
+                if(getElemento(i,j)==x->getElemento(i,j))
+                {
+                    valor=true;
+                }
+                else
+                {
+                    valor=false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    return valor;
+
 }
 
 

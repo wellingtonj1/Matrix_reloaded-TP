@@ -25,6 +25,8 @@ public:
     bool triangsup();
     bool identidade();
     void transposta(Matriz* );
+    bool simetrica(Matriz* );
+    bool iguais(Matriz* );
 
 };
 }//fim
