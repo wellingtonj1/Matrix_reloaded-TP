@@ -168,4 +168,18 @@ bool Matriz::identidade()
     return false;
 
 }
+
+void Matriz::transposta(Matriz* x)
+{
+    for(int i=0;i<x->getQuantidadeDeColunas();i++)
+    {
+        for(int j=0;j<x->getQuantidadeDeLinhas();j++)
+        {
+            setElemento(x->getElemento(j,i),i,j);
+        }
+    }
+}
+
+
 }//fim
+

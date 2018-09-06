@@ -24,6 +24,7 @@ public:
     bool trianginf();
     bool triangsup();
     bool identidade();
+    void transposta(Matriz* );
 
 };
 }//fim

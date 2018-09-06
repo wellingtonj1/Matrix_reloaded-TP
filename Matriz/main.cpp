@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
         puts("6- Para determinar se a matriz é triangular inferior;");
         puts("7- Para determinar se a matriz é triangular superior; ");
         puts("8- Para determinar se a matriz é identidade");
-        puts("9- ");
+        puts("9- Para determinar a matriz transposta");
         puts("10- ");
         puts("0- Para sair do pograna ");
         std::cin>>escolha;
@@ -162,6 +162,25 @@ int main(int argc, char *argv[])
             }while(qualmat3!=1&&qualmat3!=2);
 
            break;
+
+        case 9:
+           int qualmat4;
+           std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n";
+           do
+           {
+               std::cin>>qualmat4;
+               if(qualmat4==1)
+               {
+                    auxtest->transposta(teste1);
+               }
+               if(qualmat4==2)
+               {
+                   auxtest->transposta(teste2);
+               }
+               if(qualmat4!=1||qualmat4!=2)
+                   std::cout<<"\nDigite um numero valido!\n";
+
+           }while(qualmat4!=1&&qualmat4!=2);
 
         default:
             break;
