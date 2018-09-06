@@ -28,10 +28,10 @@ int main()
         puts("9- Para determinar a matriz transposta");
         puts("10- Para determinar se a matriz é simetrica");
         puts("11- Para determinar se as duas matrizes são iguais ou diferentes");
-        puts("12- Para determinar se a matriz é ortogonal");
-        puts("13- Para determinar se a matriz é de permutação");
-        puts("14- Para calcular a multiplicação de duas matrizes");
-        puts("15- Para calcular a potenciação de uma matriz");
+        puts("12- Para determinar se a matriz é ortogonal");//falta terminar
+        puts("13- Para determinar se a matriz é de permutação");//falta terminar
+        puts("14- Para calcular a multiplicação de duas matrizes");//falta terminar
+        puts("15- Para calcular a potenciação de uma matriz");//falta terminar
         puts("0- Para sair do pograna ");
         std::cin>>escolha;
 
