@@ -6,13 +6,13 @@ int main()
 {
     int tamacol,tamalinha;
     int escolha,qualmat;
-    puts("Digite a quantidade de linhas : ");
+    puts("Digite a quantidade de linhas da primeira matriz : ");
     std::cin>>tamalinha;
-    puts("Digite a quantidade de colunas : ");
+    puts("Digite a quantidade de colunas da primeira matriz : ");
     std::cin>>tamacol;
     TP2::Matriz *teste1 = new TP2::Matriz(tamalinha,tamacol);
-    TP2::Matriz *teste2= new TP2::Matriz(tamalinha,tamacol);
     TP2::Matriz *auxtest= new TP2::Matriz(tamalinha,tamacol);
+    TP2::Matriz *teste2= new TP2::Matriz(tamalinha,tamacol);
 
 
     do
@@ -28,10 +28,10 @@ int main()
         puts("9- Para determinar a matriz transposta");
         puts("10- Para determinar se a matriz é simetrica");
         puts("11- Para determinar se as duas matrizes são iguais ou diferentes");
-        puts("12- Para determinar se a matriz é ortogonal");//falta terminar
-        puts("13- Para determinar se a matriz é de permutação");//falta terminar
-        puts("14- Para calcular a multiplicação de duas matrizes");//falta terminar
-        puts("15- Para calcular a potenciação de uma matriz");//falta terminar
+        puts("12- Para determinar se a matriz é ortogonal");        //falta terminar
+        puts("13- Para determinar se a matriz é de permutação");        //falta terminar
+        puts("14- Para calcular a multiplicação de duas matrizes");     //falta terminar
+        puts("15- Para calcular a potenciação de uma matriz");      //falta terminar
         puts("0- Para sair do pograna ");
         std::cin>>escolha;
 
@@ -81,9 +81,9 @@ int main()
             teste1->getMatriz();
             std::cout<<"\n\nSegunda matriz \n";
             teste2->getMatriz();
-            std::cout<<"\n\nAuxiliar matriz \n";
+            /*std::cout<<"\n\nAuxiliar matriz \n";
             auxtest->getMatriz();
-            puts("");
+            puts("");*/
             break;
 
         case 6:
@@ -242,6 +242,8 @@ int main()
 
         case 14:
 
+            auxtest=*teste1*(teste2);
+            auxtest->getMatriz();
             break;
 
         case 15:

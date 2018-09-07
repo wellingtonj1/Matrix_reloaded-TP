@@ -20,7 +20,7 @@ public:
     void getMatriz();
     Matriz* operator + (Matriz* mat);
     Matriz* operator - (Matriz* mat);
-    Matriz* operator * (Matriz* mat);
+    Matriz* operator * (Matriz* );
     bool trianginf();
     bool triangsup();
     bool identidade();

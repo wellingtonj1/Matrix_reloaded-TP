@@ -46,6 +46,7 @@ int Matriz::getElemento(int linha, int coluna)
 
 void Matriz::getMatriz()
 {
+    std::cout<<"\n";
     for(int linha = 0; linha < getQuantidadeDeLinhas(); linha++)
     {
         for(int coluna = 0; coluna < getQuantidadeDeColunas(); coluna++)
@@ -59,8 +60,8 @@ void Matriz::getMatriz()
                 std::cout<<" "<<getElemento(linha,coluna)<< " ";
             }
         }
-
     }
+    std::cout<<"\n";
 }
 
 Matriz* Matriz::operator + (Matriz* mat)
@@ -97,10 +98,28 @@ Matriz* Matriz::operator - (Matriz*  mat)
 
 }
 
-/*Matriz* Matriz::operator * (Matriz* mat)
+Matriz* Matriz::operator * (Matriz* x)
 {
+    //Da definição, temos que a matriz produto A . B
+    //só existe se o número de colunas de A for igual ao número de linhas de B:
 
-}*/
+    int i,j,k,valor;
+    Matriz *aux = new Matriz(quantidadeDeLinhas,quantidadeDeColunas);
+    for(i=0;i<quantidadeDeLinhas;i++)
+    {
+        for(j=0;j<quantidadeDeColunas;j++)
+        {
+            valor=0;
+            for(k=0;k<quantidadeDeLinhas;k++)
+            {
+               valor=valor+(getElemento(i,k)*x->getElemento(k,j));
+            }
+            aux->setElemento(valor,i,j);
+        }
+    }
+
+    return aux;
+}
 
 bool Matriz::trianginf()
 {
