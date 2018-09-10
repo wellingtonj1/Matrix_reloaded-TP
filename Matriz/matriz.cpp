@@ -44,7 +44,7 @@ int Matriz::getElemento(int linha, int coluna)
     return *(ptMatriz+pos);
 }
 
-void Matriz::getMatriz()
+void Matriz:: getMatriz()
 {
     std::cout<<"\n";
     for(int linha = 0; linha < getQuantidadeDeLinhas(); linha++)
@@ -242,6 +242,38 @@ bool Matriz::iguais(Matriz* x)
 
     return valor;
 
+}
+
+bool Matriz::ortogonal(Matriz* x)
+{
+    x=0;
+    return x;
+}
+
+Matriz* Matriz::potenssa(Matriz* x,int w)
+{
+    int i,j,k,valor;
+    Matriz *aux = new Matriz(quantidadeDeLinhas,quantidadeDeColunas);
+    aux=x;
+    do
+    {
+        puts("entrou");
+        for(i=0;i<quantidadeDeLinhas;i++)
+        {
+            for(j=0;j<quantidadeDeColunas;j++)
+            {
+                valor=0;
+                for(k=0;k<quantidadeDeLinhas;k++)
+                {
+                   valor=valor+(x->getElemento(i,k)*aux->getElemento(k,j));
+                }
+                aux->setElemento(valor,i,j);
+            }
+        }
+        w--;
+    }while(w!=0);
+
+    return aux;
 }
 
 

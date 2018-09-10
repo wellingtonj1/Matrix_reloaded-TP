@@ -27,6 +27,8 @@ public:
     void transposta(Matriz* );
     bool simetrica(Matriz* );
     bool iguais(Matriz* );
+    bool ortogonal(Matriz* );
+    Matriz* potenssa(Matriz* , int );
 
 };
 }//fim

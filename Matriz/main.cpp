@@ -5,7 +5,7 @@
 int main()
 {
     int tamacol,tamalinha;
-    int escolha,qualmat;
+    int escolha,qualmat,vlr;
     puts("Digite a quantidade de linhas da primeira matriz : ");
     std::cin>>tamalinha;
     puts("Digite a quantidade de colunas da primeira matriz : ");
@@ -30,7 +30,7 @@ int main()
         puts("11- Para determinar se as duas matrizes são iguais ou diferentes");
         puts("12- Para determinar se a matriz é ortogonal");        //falta terminar
         puts("13- Para determinar se a matriz é de permutação");        //falta terminar
-        puts("14- Para calcular a multiplicação de duas matrizes");     //falta terminar
+        puts("14- Para calcular a multiplicação de duas matrizes");
         puts("15- Para calcular a potenciação de uma matriz");      //falta terminar
         puts("0- Para sair do pograna ");
         std::cin>>escolha;
@@ -81,9 +81,9 @@ int main()
             teste1->getMatriz();
             std::cout<<"\n\nSegunda matriz \n";
             teste2->getMatriz();
-            /*std::cout<<"\n\nAuxiliar matriz \n";
+            std::cout<<"\n\nAuxiliar matriz \n";
             auxtest->getMatriz();
-            puts("");*/
+            puts("");
             break;
 
         case 6:
@@ -232,7 +232,7 @@ int main()
             break;
 
         case 12:
-
+        //ortogonal
 
             break;
 
@@ -248,7 +248,31 @@ int main()
 
         case 15:
 
-            break;
+        do
+        {
+            std::cout<<"\nQual matriz você quer potenciar ? { 1 ou 2 }\n\n";
+            std::cin>>qualmat;
+            if(qualmat==1)
+            {
+                std::cout<<"\nDigite a qual valor, desejas elevar tal matriz : ";
+                std::cin>>vlr;
+                auxtest->potenssa(teste1,vlr);
+                auxtest->getMatriz();
+            }
+            if(qualmat==2)
+            {
+                std::cout<<"\nDigite a qual valor, desejas elevar tal matriz : ";
+                std::cin>>vlr;
+                auxtest->potenssa(teste2,vlr);
+                auxtest->getMatriz();
+
+            }
+            if(qualmat!=1&&qualmat!=2)
+                std::cout<<"\nDigite um numero valido!\n";
+
+        }while(qualmat!=1&&qualmat!=2);
+
+        break;
 
         default:
             break;
