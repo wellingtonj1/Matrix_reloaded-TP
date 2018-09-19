@@ -246,36 +246,62 @@ bool Matriz::iguais(Matriz* x)
 
 bool Matriz::ortogonal(Matriz* x)
 {
-    x=0;
+    x=nullptr;
     return x;
 }
 
 Matriz* Matriz::potenssa(Matriz* x,int w)
 {
-    int i,j,k,valor;
+    int a,b,i=0;
     Matriz *aux = new Matriz(quantidadeDeLinhas,quantidadeDeColunas);
-    aux=x;
+    if(w==0)
+    {
+        std::cout<<"\nDigite um valor valido\n";
+        throw("\n\tValor invalido inserido\n");
+        return nullptr;
+    }
+    for(a=0;a<quantidadeDeLinhas;a++)
+    {
+        for(b=0;b<quantidadeDeColunas;b++)
+        {
+            aux->setElemento(x->getElemento(a,b),a,b);
+        }
+    }
     do
     {
-        puts("entrou");
-        for(i=0;i<quantidadeDeLinhas;i++)
-        {
-            for(j=0;j<quantidadeDeColunas;j++)
-            {
-                valor=0;
-                for(k=0;k<quantidadeDeLinhas;k++)
-                {
-                   valor=valor+(x->getElemento(i,k)*aux->getElemento(k,j));
-                }
-                aux->setElemento(valor,i,j);
-            }
-        }
-        w--;
-    }while(w!=0);
 
+        if(i==0)
+        {
+            aux=*x*(x);
+        }
+        else
+        {
+            aux=*x*(aux);
+        }
+        i++;
+    }while(i!=w-1);
     return aux;
 }
 
+void Matriz::menu()
+{
+    puts("1- Para setar um valor na matriz");
+    puts("2- Para setar um valor para a segunda matriz " );
+    puts("3- Para somar a matriz criada");
+    puts("4- Para subtrair a matriz");
+    puts("5- Para mostrar todas as matrizes");
+    puts("6- Para determinar se a matriz é triangular inferior");
+    puts("7- Para determinar se a matriz é triangular superior");
+    puts("8- Para determinar se a matriz é identidade");
+    puts("9- Para determinar a matriz transposta");
+    puts("10- Para determinar se a matriz é simetrica");
+    puts("11- Para determinar se as duas matrizes são iguais ou diferentes");
+    puts("12- Para determinar se a matriz é ortogonal");        //falta terminar
+    puts("13- Para determinar se a matriz é de permutação");        //falta terminar
+    puts("14- Para calcular a multiplicação de duas matrizes");
+    puts("15- Para calcular a potenciação de uma matriz");      //falta terminar
+    puts("0- Para sair do pograna ");
+}
 
 }//fim
 

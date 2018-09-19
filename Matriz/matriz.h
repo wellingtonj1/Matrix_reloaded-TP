@@ -29,6 +29,7 @@ public:
     bool iguais(Matriz* );
     bool ortogonal(Matriz* );
     Matriz* potenssa(Matriz* , int );
+    void menu();
 
 };
 }//fim

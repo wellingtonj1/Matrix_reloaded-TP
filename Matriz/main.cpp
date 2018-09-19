@@ -17,22 +17,7 @@ int main()
 
     do
     {
-        puts("1- Para setar um valor na matriz");
-        puts("2- Para setar um valor para a segunda matriz " );
-        puts("3- Para somar a matriz criada");
-        puts("4- Para subtrair a matriz");
-        puts("5- Para mostrar todas as matrizes");
-        puts("6- Para determinar se a matriz é triangular inferior");
-        puts("7- Para determinar se a matriz é triangular superior");
-        puts("8- Para determinar se a matriz é identidade");
-        puts("9- Para determinar a matriz transposta");
-        puts("10- Para determinar se a matriz é simetrica");
-        puts("11- Para determinar se as duas matrizes são iguais ou diferentes");
-        puts("12- Para determinar se a matriz é ortogonal");        //falta terminar
-        puts("13- Para determinar se a matriz é de permutação");        //falta terminar
-        puts("14- Para calcular a multiplicação de duas matrizes");
-        puts("15- Para calcular a potenciação de uma matriz");      //falta terminar
-        puts("0- Para sair do pograna ");
+        teste1->menu();
         std::cin>>escolha;
 
         switch (escolha) {
@@ -81,8 +66,8 @@ int main()
             teste1->getMatriz();
             std::cout<<"\n\nSegunda matriz \n";
             teste2->getMatriz();
-            std::cout<<"\n\nAuxiliar matriz \n";
-            auxtest->getMatriz();
+            /*std::cout<<"\n\nAuxiliar matriz \n";
+            auxtest->getMatriz();*/
             puts("");
             break;
 
@@ -256,7 +241,7 @@ int main()
             {
                 std::cout<<"\nDigite a qual valor, desejas elevar tal matriz : ";
                 std::cin>>vlr;
-                auxtest->potenssa(teste1,vlr);
+                auxtest=teste1->potenssa(teste1,vlr);
                 auxtest->getMatriz();
             }
             if(qualmat==2)
