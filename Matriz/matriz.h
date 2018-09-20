@@ -30,7 +30,7 @@ public:
     bool ortogonal(Matriz* );
     Matriz* potenssa(Matriz* , int );
     void menu();
-
+    Matriz* multipork(Matriz* , int);
 };
 }//fim
 

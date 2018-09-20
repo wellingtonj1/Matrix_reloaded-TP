@@ -283,6 +283,19 @@ Matriz* Matriz::potenssa(Matriz* x,int w)
     return aux;
 }
 
+Matriz* Matriz::multipork(Matriz* x, int w)
+{
+    Matriz *aux = new Matriz(quantidadeDeLinhas,quantidadeDeColunas);
+
+    for(int i=0;i<x->getQuantidadeDeLinhas();i++)
+    {
+        for(int y=0;y<x->getQuantidadeDeColunas();y++)
+        {
+            aux->setElemento(x->getElemento(i,y)*w,i,y);
+        }
+    }
+    return aux;
+}
 void Matriz::menu()
 {
     puts("1- Para setar um valor na matriz");
@@ -299,8 +312,10 @@ void Matriz::menu()
     puts("12- Para determinar se a matriz é ortogonal");        //falta terminar
     puts("13- Para determinar se a matriz é de permutação");        //falta terminar
     puts("14- Para calcular a multiplicação de duas matrizes");
-    puts("15- Para calcular a potenciação de uma matriz");      //falta terminar
+    puts("15- Para calcular a potenciação de uma matriz");
+    puts("16- Para calcular a multiplicação de uma matriz por k");
     puts("0- Para sair do pograna ");
+
 }
 
 }//fim

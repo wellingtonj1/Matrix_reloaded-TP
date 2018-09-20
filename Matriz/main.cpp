@@ -4,16 +4,18 @@
 
 int main()
 {
-    int tamacol,tamalinha;
-    int escolha,qualmat,vlr;
+    int tamacol,tamalinha,escolha,qualmat,vlr;
     puts("Digite a quantidade de linhas da primeira matriz : ");
     std::cin>>tamalinha;
     puts("Digite a quantidade de colunas da primeira matriz : ");
     std::cin>>tamacol;
     TP2::Matriz *teste1 = new TP2::Matriz(tamalinha,tamacol);
     TP2::Matriz *auxtest= new TP2::Matriz(tamalinha,tamacol);
-    TP2::Matriz *teste2= new TP2::Matriz(tamalinha,tamacol);
-
+    puts("Digite a quantidade de linhas da segunda matriz : ");
+    std::cin>>tamalinha;
+    puts("Digite a quantidade de colunas da segunda matriz : ");
+    std::cin>>tamacol;
+    TP2::Matriz *teste2 = new TP2::Matriz(tamalinha,tamacol);
 
     do
     {
@@ -99,6 +101,7 @@ int main()
            break;
 
         case 7:
+
 
             std::cout<<"\nEm qual matriz você quer determinar ? { 1 ou 2 }\n\n";
             do
@@ -259,10 +262,39 @@ int main()
 
         break;
 
+        case 16:
+
+        do
+        {
+            std::cout<<"\nQual matriz você quer multiplicar ? { 1 ou 2 }\n\n";
+            std::cin>>qualmat;
+            if(qualmat==1)
+            {
+                std::cout<<"\nDigite a qual valor, desejas multiplicar tal matriz : ";
+                std::cin>>vlr;
+                auxtest=teste1->multipork(teste1,vlr);
+                auxtest->getMatriz();
+            }
+            if(qualmat==2)
+            {
+                std::cout<<"\nDigite a qual valor, desejas multiplicar tal matriz : ";
+                std::cin>>vlr;
+                auxtest->multipork(teste2,vlr);
+                auxtest->getMatriz();
+
+            }
+            if(qualmat!=1&&qualmat!=2)
+                std::cout<<"\nDigite um numero valido!\n";
+
+        }while(qualmat!=1&&qualmat!=2);
+
+        break;
+
         default:
             break;
         }
     }while(escolha!=0);
+
     return 0;
 
 }
