@@ -246,8 +246,25 @@ bool Matriz::iguais(Matriz* x)
 
 bool Matriz::ortogonal(Matriz* x)
 {
-    x=nullptr;
-    return x;
+    int i;
+    if(x->getQuantidadeDeColunas()!=x->getQuantidadeDeLinhas())
+    {
+        return false;
+    }
+    else
+    {
+        for(i=0;i<x->getQuantidadeDeLinhas()&& x->getElemento(i,i)==1; i++);
+
+        if(i==x->getQuantidadeDeLinhas())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }
 
 Matriz* Matriz::potenssa(Matriz* x,int w)
@@ -309,7 +326,7 @@ void Matriz::menu()
     puts("9- Para determinar a matriz transposta");
     puts("10- Para determinar se a matriz é simetrica");
     puts("11- Para determinar se as duas matrizes são iguais ou diferentes");
-    puts("12- Para determinar se a matriz é ortogonal");        //falta terminar
+    puts("12- Para determinar se a matriz é ortogonal");
     puts("13- Para determinar se a matriz é de permutação");        //falta terminar
     puts("14- Para calcular a multiplicação de duas matrizes");
     puts("15- Para calcular a potenciação de uma matriz");

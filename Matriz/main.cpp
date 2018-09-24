@@ -221,6 +221,33 @@ int main()
 
         case 12:
         //ortogonal
+            std::cout<<"\nEm qual matriz você quer verificar ? { 1 ou 2 }\n\n";
+            do
+            {
+                std::cin>>qualmat;
+                if(qualmat==1)
+                {
+                     if(auxtest->ortogonal(teste1))
+                     {
+                         std::cout<<"\n A matriz é ortogonal ! \n\n";
+                     }
+                     else
+                         std::cout<<"\n A matriz não é ortogonal ! \n\n";
+                }
+                if(qualmat==2)
+                {
+                    if(auxtest->ortogonal(teste2))
+                    {
+                        std::cout<<"\n A matriz é ortogonal ! \n\n";
+                    }
+                    else
+                        std::cout<<"\n A matriz não é ortogonal ! \n\n";
+                }
+                if(qualmat!=1&&qualmat!=2)
+                    std::cout<<"\nDigite um numero valido!\n";
+
+            }while(qualmat!=1&&qualmat!=2);
+            break;
 
             break;
 
