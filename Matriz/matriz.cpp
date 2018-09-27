@@ -66,7 +66,11 @@ void Matriz:: getMatriz()
 
 Matriz* Matriz::operator + (Matriz* mat)
 {
-
+    if(quantidadeDeColunas!=mat->getQuantidadeDeColunas()&&quantidadeDeLinhas!=mat->quantidadeDeLinhas)
+    {
+        std::cout<<"\nImpossivel realizar a soma\n";
+        return nullptr;
+    }
     Matriz *aux = new Matriz(quantidadeDeLinhas,quantidadeDeColunas);
     for(int linha=0; linha<quantidadeDeLinhas; linha++)
     {
@@ -76,7 +80,6 @@ Matriz* Matriz::operator + (Matriz* mat)
             aux->setElemento(valor,linha,coluna);
         }
     }
-
     return aux;
 
 
@@ -84,6 +87,11 @@ Matriz* Matriz::operator + (Matriz* mat)
 
 Matriz* Matriz::operator - (Matriz*  mat)
 {
+    if(quantidadeDeColunas!=mat->getQuantidadeDeColunas()&&quantidadeDeLinhas!=mat->quantidadeDeLinhas)
+    {
+        std::cout<<"\nImpossivel realizar a subtração\n";
+        return nullptr;
+    }
     Matriz *aux = new Matriz(quantidadeDeLinhas,quantidadeDeColunas);
     for(int linha=0; linha<quantidadeDeLinhas; linha++)
     {
@@ -315,23 +323,23 @@ Matriz* Matriz::multipork(Matriz* x, int w)
 }
 void Matriz::menu()
 {
-    puts("1- Para setar um valor na matriz");
-    puts("2- Para setar um valor para a segunda matriz " );
-    puts("3- Para somar a matriz criada");
-    puts("4- Para subtrair a matriz");
-    puts("5- Para mostrar todas as matrizes");
-    puts("6- Para determinar se a matriz é triangular inferior");
-    puts("7- Para determinar se a matriz é triangular superior");
-    puts("8- Para determinar se a matriz é identidade");
-    puts("9- Para determinar a matriz transposta");
-    puts("10- Para determinar se a matriz é simetrica");
-    puts("11- Para determinar se as duas matrizes são iguais ou diferentes");
-    puts("12- Para determinar se a matriz é ortogonal");
-    puts("13- Para determinar se a matriz é de permutação");        //falta terminar
-    puts("14- Para calcular a multiplicação de duas matrizes");
-    puts("15- Para calcular a potenciação de uma matriz");
-    puts("16- Para calcular a multiplicação de uma matriz por k");
-    puts("0- Para sair do pograna ");
+    std::cout<<("\n1- Para setar um valor na matriz\n");
+    std::cout<<("2- Para setar um valor para a segunda matriz \n" );
+    std::cout<<("3- Para somar a matriz criada\n");
+    std::cout<<("4- Para subtrair a matriz\n");
+    std::cout<<("5- Para mostrar todas as matrizes\n");
+    std::cout<<("6- Para determinar se a matriz é triangular inferior\n");
+    std::cout<<("7- Para determinar se a matriz é triangular superior\n");
+    std::cout<<("8- Para determinar se a matriz é identidade\n");
+    std::cout<<("9- Para determinar a matriz transposta\n");
+    std::cout<<("10- Para determinar se a matriz é simetrica\n");
+    std::cout<<("11- Para determinar se as duas matrizes são iguais ou diferentes\n");
+    std::cout<<("12- Para determinar se a matriz é ortogonal\n");
+    std::cout<<("13- Para determinar se a matriz é de permutação\n");        //falta terminar
+    std::cout<<("14- Para calcular a multiplicação de duas matrizes\n");
+    std::cout<<("15- Para calcular a potenciação de uma matriz\n");
+    std::cout<<("16- Para calcular a multiplicação de uma matriz por k\n");
+    std::cout<<("0- Para sair do pograna\n ");
 
 }
 

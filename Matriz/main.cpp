@@ -16,6 +16,7 @@ int main()
     puts("Digite a quantidade de colunas da segunda matriz : ");
     std::cin>>tamacol;
     TP2::Matriz *teste2 = new TP2::Matriz(tamalinha,tamacol);
+    system("clear");
 
     do
     {
